@@ -14,7 +14,7 @@ namespace Full_GRASP_And_SOLID.Library
         File
     }
 
-    public class AllInOnePrinter
+    public class AllInOnePrinter : IPrinter
     {
         public void PrintRecipe(Recipe recipe, Destination destination)
         {
