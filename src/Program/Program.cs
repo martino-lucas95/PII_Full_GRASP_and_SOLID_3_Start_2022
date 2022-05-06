@@ -26,11 +26,19 @@ namespace Full_GRASP_And_SOLID
             recipe.AddStep(new Step(GetProduct("Café"), 100, GetEquipment("Cafetera"), 120));
             recipe.AddStep(new Step(GetProduct("Leche"), 200, GetEquipment("Hervidor"), 60));
 
-            IPrinter printer;
-            printer = new ConsolePrinter();
-            printer.PrintRecipe(recipe);
-            printer = new FilePrinter();
-            printer.PrintRecipe(recipe);
+/*Elimino la clase AllInOnePrinter para crear las clases ConsolePrinter y FilePrinter, que ambas implementan la interfaz IPrinter que las obliga a tener un metodo PrintRecipe a ambas clases. De esta forma PrintRecipe es una operación que cumple con el patrón de Polimorfismo */
+
+            // IPrinter printer;
+            // printer = new ConsolePrinter();
+            // printer.PrintRecipe(recipe);
+            // printer = new FilePrinter();
+            // printer.PrintRecipe(recipe);
+
+
+            ConsolePrinter cp = new ConsolePrinter();
+            cp.PrintRecipe(recipe);
+            FilePrinter fp = new FilePrinter();
+            fp.PrintRecipe(recipe);
         }
 
         private static void PopulateCatalogs()
